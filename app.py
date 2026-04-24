@@ -18,7 +18,13 @@ st.markdown(
 st.markdown("---")
 
 # 📂 CHARGEMENT DONNÉES
-df = pd.read_csv("vente.csv")
+uploaded_file = st.file_uploader("📂 Importer un fichier CSV", type=["csv"])
+
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file)
+else:
+    st.warning("⚠️ Veuillez uploader un fichier CSV pour continuer.")
+    st.stop()
 
 # ⚙️ CALCULS
 df["CA_Brut"] = df["Prix"] * df["Quantite"]
