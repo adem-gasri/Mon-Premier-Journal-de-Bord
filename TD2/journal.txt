@@ -1,0 +1,2 @@
+"Aujourd'hui, j'apprends Git."
+"Git est génial avec VS Code !"
